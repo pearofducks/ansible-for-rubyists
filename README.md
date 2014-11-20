@@ -63,6 +63,13 @@ module can return facts.
 The example Ruby utility module, like the fact module, simply reads an input file specified as the first argument to
 the program as JSON, and outputs JSON.
 
+Reading Input
+=============
+
+Ansible internally saves arguments to an arguments file. So we must read the file and parse it. The arguments file is just a string, so any form of arguments are legal.
+
+The line `# WANT_JSON` at the top of `my_ruby_calculator` is magic, and tells Ansible to pass JSON to your module. Without this, you'll receive the arguments as the raw text provided.
+
 Conventions of JSON output
 ==========================
 
