@@ -6,7 +6,7 @@ require 'json'
 # this is a bare minimum example of a 'facts' module that returns some variables into the ansible
 # namespace. it is written to run in ruby 1.9 or greater.
 
-args = File.read ARGV[0]
+args = JSON.parse(File.read ARGV[0])
 
 begin
   a = args['a'].to_i
